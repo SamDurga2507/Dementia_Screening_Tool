@@ -1,0 +1,517 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', 'Helvetica', sans-serif;
+    background-color: #f5f5f5;
+    color: #000;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 30px;
+    border: 2px solid #000;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    border-bottom: 3px solid #000;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+.header h2 {
+    font-size: 16px;
+    font-weight: normal;
+    color: #333;
+}
+
+/* Navigation */
+.navigation {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #000;
+    padding-bottom: 15px;
+}
+
+.nav-link {
+    padding: 10px 20px;
+    background-color: #fff;
+    border: 2px solid #000;
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    background-color: #000;
+    color: #fff;
+}
+
+/* Stats Bar */
+.stats-bar {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.stat-item {
+    padding: 20px;
+    border: 2px solid #000;
+    text-align: center;
+}
+
+.stat-label {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.stat-value {
+    display: block;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+/* Table */
+.table-container {
+    overflow-x: auto;
+    border: 2px solid #000;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.data-table thead {
+    background-color: #000;
+    color: #fff;
+}
+
+.data-table th,
+.data-table td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #000;
+    font-size: 13px;
+}
+
+.data-table th {
+    font-weight: bold;
+}
+
+.data-table tbody tr:nth-child(even) {
+    background-color: #f5f5f5;
+}
+
+.data-table tbody tr:hover {
+    background-color: #e0e0e0;
+}
+
+.loading {
+    text-align: center;
+    padding: 40px !important;
+    color: #666;
+}
+
+.no-data {
+    text-align: center;
+    padding: 40px !important;
+    color: #666;
+}
+
+/* Action Buttons */
+.action-btn {
+    padding: 5px 10px;
+    margin-right: 5px;
+    border: 1px solid #000;
+    background-color: #fff;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.action-btn:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+.btn-view {
+    border-color: #000;
+}
+
+.btn-edit {
+    border-color: #000;
+}
+
+.btn-delete {
+    border-color: #000;
+    background-color: #fff;
+}
+
+.btn-delete:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 50px auto;
+    border: 3px solid #000;
+    width: 90%;
+    max-width: 600px;
+    max-height: 85vh;
+    overflow-y: auto;
+}
+
+.modal-large {
+    max-width: 900px;
+}
+
+.modal-small {
+    max-width: 500px;
+}
+
+.modal-header {
+    padding: 20px;
+    border-bottom: 2px solid #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f5f5f5;
+}
+
+.modal-header h3 {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    line-height: 1;
+}
+
+.close-btn:hover {
+    color: #666;
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+.modal-footer {
+    padding: 20px;
+    border-top: 2px solid #000;
+    text-align: right;
+    background-color: #f5f5f5;
+}
+
+/* Patient Details */
+.detail-group {
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #ccc;
+}
+
+.detail-group:last-child {
+    border-bottom: none;
+}
+
+.detail-label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    font-size: 13px;
+}
+
+.detail-value {
+    display: block;
+    font-size: 14px;
+}
+
+.relatives-list {
+    margin-top: 10px;
+}
+
+.relative-item-view {
+    padding: 10px;
+    border: 1px solid #000;
+    margin-bottom: 10px;
+    background-color: #f5f5f5;
+}
+
+.relative-item-view strong {
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Form Styles in Modal */
+.form-section {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ccc;
+}
+
+.form-section h4 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #000;
+    padding-bottom: 10px;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #000;
+    padding-bottom: 10px;
+}
+
+.section-header h4 {
+    margin: 0;
+    border: none;
+    padding: 0;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 13px;
+}
+
+.required {
+    color: #000;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="date"],
+input[type="number"],
+select,
+textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #000;
+    background-color: #fff;
+    font-size: 13px;
+    font-family: 'Arial', 'Helvetica', sans-serif;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 2px solid #000;
+    outline-offset: 2px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* Relative Item in Edit */
+.relative-item {
+    padding: 15px;
+    border: 1px solid #000;
+    margin-bottom: 15px;
+    background-color: #fafafa;
+    position: relative;
+}
+
+.relative-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #000;
+    padding-bottom: 10px;
+}
+
+.relative-number {
+    font-weight: bold;
+    font-size: 13px;
+}
+
+/* Buttons */
+.btn-add {
+    padding: 8px 15px;
+    background-color: #fff;
+    border: 2px solid #000;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.btn-add:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+.btn-remove {
+    padding: 5px 10px;
+    background-color: #fff;
+    border: 1px solid #000;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.btn-remove:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+.btn-submit {
+    padding: 10px 20px;
+    background-color: #000;
+    color: #fff;
+    border: 2px solid #000;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.btn-submit:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+.btn-secondary {
+    padding: 10px 20px;
+    background-color: #fff;
+    border: 2px solid #000;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 14px;
+    margin-right: 10px;
+}
+
+.btn-secondary:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+/* Warning */
+.warning {
+    color: #000;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Toast Notifications */
+.toast {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    padding: 15px 25px;
+    background-color: #000;
+    color: #fff;
+    border: 2px solid #000;
+    font-weight: bold;
+    display: none;
+    z-index: 2000;
+}
+
+.toast.show {
+    display: block;
+    animation: slideIn 0.3s;
+}
+
+.toast.error {
+    background-color: #fff;
+    color: #000;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(400px);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        margin: 10px;
+        padding: 15px;
+    }
+
+    .stats-bar {
+        grid-template-columns: 1fr;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .navigation {
+        flex-direction: column;
+    }
+
+    .modal-content {
+        width: 95%;
+        margin: 20px auto;
+    }
+
+    .data-table {
+        font-size: 11px;
+    }
+
+    .data-table th,
+    .data-table td {
+        padding: 8px;
+    }
+}

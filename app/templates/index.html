@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Registration - Dementia Screening Tool</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>DEMENTIA SCREENING TOOL</h1>
+            <h2>Patient Registration Form</h2>
+        </header>
+
+        <nav class="navigation">
+            <a href="/" class="nav-link active">+ New Patient</a>
+            <a href="/dashboard" class="nav-link">Dashboard</a>
+        </nav>
+
+        <form id="patientForm" class="form">
+            <section class="form-section">
+                <h3>Patient Information</h3>
+                
+                <div class="form-group">
+                    <label for="patient_name">Patient Name <span class="required">*</span></label>
+                    <input type="text" id="patient_name" name="patient_name" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="gender">Gender <span class="required">*</span></label>
+                        <select id="gender" name="gender" required>
+                            <option value="">Select Gender</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="date_of_birth">Date of Birth <span class="required">*</span></label>
+                        <input type="date" id="date_of_birth" name="date_of_birth" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="father_name">Father's Name <span class="required">*</span></label>
+                    <input type="text" id="father_name" name="father_name" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="education_years">Education (Years) <span class="required">*</span></label>
+                        <input type="number" id="education_years" name="education_years" min="0" max="30" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="hobbies">Hobbies</label>
+                    <textarea id="hobbies" name="hobbies" rows="2"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <textarea id="address" name="address" rows="3"></textarea>
+                </div>
+            </section>
+
+            <section class="form-section">
+                <div class="section-header">
+                    <h3>Patient Relatives</h3>
+                    <button type="button" id="addRelative" class="btn-add">+ Add Relative</button>
+                </div>
+
+                <div id="relativesContainer"></div>
+            </section>
+
+            <div class="form-actions">
+                <button type="submit" class="btn-submit">Submit Patient Information</button>
+            </div>
+        </form>
+
+        <div id="successMessage" class="message success-message" style="display: none;">
+            <p>Patient registered successfully! Patient ID: <span id="patientId"></span></p>
+            <button onclick="location.reload()" class="btn-secondary">Register Another Patient</button>
+        </div>
+
+        <div id="errorMessage" class="message error-message" style="display: none;">
+            <p id="errorText"></p>
+            <button onclick="hideError()" class="btn-secondary">Close</button>
+        </div>
+    </div>
+
+    <script src="/static/js/script.js"></script>
+</body>
+</html>
